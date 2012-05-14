@@ -2,9 +2,13 @@
     "name": "crud"
   , "version": "0.0.1"
   , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
+  , "contributors": [
+      { "name": "Henrik Kjelsberg", "email": "henrik@kjelsberg.net" }
+  ]
   , "description": "Crud functionality for mongoose-models. Fits well with express.js"
   , "keywords": ["mongoose", "express", "crud", "scaffold"]
   , "main": "crud.js"
+  , "repository": "git://github.com/hkjels/crud.git"
   , "scripts": {
       "test": "make mocha"
     , "prepublish": "make mocha lint"
