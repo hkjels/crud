@@ -1,6 +1,6 @@
 {
     "name": "crud"
-  , "version": "0.0.1"
+  , "version": "0.0.2"
   , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
   , "contributors": [
       { "name": "Henrik Kjelsberg", "email": "henrik@kjelsberg.net" }
