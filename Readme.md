@@ -12,6 +12,7 @@ __Crud functionality for mongoose-models. Fits well with express.js__
 
     var express = require('express')
       , app = module.exports = express.createServer()
+      , models = require('./models')
       , crud = require('crud')
 
     app.get('/crud/:model', crud.middleware, function (req, res) {
@@ -26,6 +27,7 @@ __Crud functionality for mongoose-models. Fits well with express.js__
       , crud = require('crud').form
 
     crud(Model, function (err, form) {
+      if (err) return console.err(err)
       console.dir(form)
     })
 

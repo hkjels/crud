@@ -6,7 +6,6 @@
 var express = require('express')
   , app = module.exports = express.createServer()
   , routes = require('./routes')
-  , mongoose = require('mongoose')
   , models = require('./models')
   , stylus = require('stylus')
   , nib = require('nib')
