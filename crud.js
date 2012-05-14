@@ -1,4 +1,10 @@
 
+/*!
+ * Crud
+ * Copyright (c) Henrik Kjelsberg 2012 <henrik@kjelsberg.net>
+ * MIT licensed
+ */
+
 /**
  * Module dependencies
  */
@@ -10,8 +16,8 @@ var mongoose = require('mongoose')
  * Simplify
  *
  * Normalizes a mongoose Schema to be used with a template
- * @param {String} model   Name of the mongoose model
- * @param {Function} cb    Callback
+ * @param {Mixed} model     Model or name of a model
+ * @param {Function} cb     Callback
  */
 
 var simplify = exports.simplify = function (model, cb) {
@@ -24,7 +30,7 @@ var simplify = exports.simplify = function (model, cb) {
    */
 
   try {
-    Model = mongoose.model(model)
+    Model = typeof model === 'string' ? mongoose.model(model) : model
     Schema = cycle.decycle(Model.prototype._schema.paths)
   }
 
