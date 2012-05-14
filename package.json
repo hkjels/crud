@@ -7,14 +7,15 @@
   , "main": "crud.js"
   , "scripts": {
       "test": "make mocha"
-    , "prepublish": "make mocha lint docs"
+    , "prepublish": "make mocha lint"
   }
   , "dependencies": {
       "cycle": "1.0.0"
     , "mongoose": ">= 2.0.0"
   }
   , "devDependencies": {
-      "express": "2.5.9"
+      "dox": "0.3.1"
+    , "express": "2.5.9"
     , "jade": "0.26.0"
     , "jshint": ">= 0.7.0"
     , "mocha": "1.0.3"

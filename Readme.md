@@ -8,16 +8,25 @@ __Crud functionality for mongoose-models. Fits well with express.js__
     λ npm install crud
 
 
-## With express.js
+## With express.js magic
 
     var express = require('express')
       , app = module.exports = express.createServer()
-      , mongoose = require('mongoose')
-      , Model = require('./Model')
       , crud = require('crud')
 
-    app.get('/crud/:model', crud, function (req, res) {
+    app.get('/crud/:model', crud.middleware, function (req, res) {
       res.render('crud')
+    })
+
+
+## Without express.js magic
+
+    var mongoose = require('mongoose')
+      , Model = mongoose.model('Model')
+      , crud = require('crud').form
+
+    crud(Model, function (err, form) {
+      console.dir(form)
     })
 
 

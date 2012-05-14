@@ -13,14 +13,14 @@ var mongoose = require('mongoose')
   , cycle = require('cycle')
 
 /**
- * Simplify
+ * Form
  *
- * Normalizes a mongoose Schema to be used with a template
+ * Normalizes a mongoose Schema to be used with a form-template
  * @param {Mixed} model     Model or name of a model
  * @param {Function} cb     Callback
  */
 
-var simplify = exports.simplify = function (model, cb) {
+var form = exports.form = function (model, cb) {
   var err
     , Model
     , Schema
@@ -83,7 +83,7 @@ var simplify = exports.simplify = function (model, cb) {
  */
 
 exports.middleware = function (req, res, next, model) {
-  simplify(model, function (err, form) {
+  form(model, function (err, form) {
     if (err) return next(err)
     req.locals('form', form)
     return next()
