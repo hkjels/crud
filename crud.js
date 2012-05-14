@@ -21,9 +21,13 @@ var mongoose = require('mongoose')
  */
 
 var form = exports.form = function (model, cb) {
-  var err
+  var err = false
+    , form = {}
     , Model
     , Schema
+    , copy = {
+        'isRequired': 'required'
+    }
 
   /**
    * Retrieve model from mongoose
@@ -49,30 +53,58 @@ var form = exports.form = function (model, cb) {
    */
 
   for (var field in Schema) {
-    var fieldtype = field.match(/(number|date|email|password|url|tlf)/gi)
 
-    // Required
-
-    Schema[field]['required'] = typeof Schema[field]['isRequired'] !== 'undefined'
-                              ? Schema[field]['isRequired']
-                              : null
-
-    // Field type
-    // TODO #crud Add number, date etc
-
-    fieldtype = fieldtype || 'text'
-    Schema[field]['type'] = typeof Schema[field]['options']['override'] !== 'undefined'
-                          ? Schema[field]['options']['override']
-                          : fieldtype
-
-    // Field name
-
-    Schema[field]['name'] = field.substring(field.lastIndexOf('.') + 1)
+    /**
+     * Ignored fields
+     */
 
     for (var prop in Schema[field]) {
-      if (prop === 'selected' && !field[prop]) delete Schema[field]
+      if (prop === 'selected' && !field[prop]) continue
     }
+
+    form[field] = {}
+
+    /**
+     * Copy a bunch of parameters
+     *
+     * The value from the copy-object is used as the key to our new form-object
+     * TODO Need a smarter way of pushing values from Schema to form
+     */
+
+    for (var key in copy) {
+      if (typeof Schema[field][key] !== 'undefined') {
+        form[field][copy[key]] = Schema[field][key]
+      }
+    }
+
+    /**
+     * Field name
+     */
+
+    form[field]['name'] = field.substring(field.lastIndexOf('.') + 1)
+
+    /**
+     * Field type
+     */
+
+    var fieldtype = field.match(/(number|date|email|password|url|tlf)/gi) || 'text'
+    form[field]['type'] = Schema[field].instance === 'boolean' ? 'checkbox' : fieldtype
+    form[field]['type'] = typeof Schema[field]['options']['override'] !== 'undefined'
+                        ? Schema[field]['options']['override']
+                        : fieldtype
+    form[field]['type'] = field[0] === '_' ? 'hidden' : fieldtype
+    if (typeof Schema[field]['options']['min'] !== 'undefined'
+        && Schema[field]['options']['min'] >= 50) {
+      form[field]['type'] = 'textarea'
+    }
+    if (typeof Schema[field]['options']['max'] !== 'undefined') {
+      form[field]['max'] = Schema[field]['options']['max']
+    }
+
+    console.dir(Schema[field])
   }
+
+  return cb(err, form)
 }
 
 /**
@@ -82,10 +114,11 @@ var form = exports.form = function (model, cb) {
  * the specified model.
  */
 
-exports.middleware = function (req, res, next, model) {
+exports.middleware = function (req, res, next) {
+  var model = req.params.model
   form(model, function (err, form) {
     if (err) return next(err)
-    req.locals('form', form)
+    res.locals({form: form, model: model})
     return next()
   })
 }

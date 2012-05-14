@@ -1,0 +1,46 @@
+
+form
+  background: white
+  border-radius: 4px
+  box-shadow: 0 1px 5px rgba(black, 0.3)
+  width: 580px
+
+legend
+  background: black
+  border-radius: top 4px
+  color: white
+  display: block
+  font-size: 1.5em
+  padding: 6px 0
+  text-indent: 10px
+  width: 100%
+
+fieldset
+  border: none
+  margin-top: 18px
+
+label
+  display: inline-block
+  text-align: right
+  padding: 0 10px
+  width: 100px
+  &:first-letter
+    text-transform: uppercase
+
+input[type=text]
+  border: none
+  border-radius: 4px
+  box-shadow: inset 0 1px 4px rgba(black, 0.3)
+  font-size: 1em
+  outline: none
+  padding: 0.3em
+  transition: box-shadow .2s ease-in-out
+  &:focus
+    box-shadow: inset 0 1px 4px rgba(black, 0.3), 0 0 5px cyan
+
+input[type=email], input[type=tlf], input[type=url]
+  @extends input[type=text]
+
+textarea
+  @extends input[type=text]
+

@@ -1,0 +1,66 @@
+form {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  width: 580px;
+}
+legend {
+  background: #000;
+  border-radius: top 4px;
+  color: #fff;
+  display: block;
+  font-size: 1.5em;
+  padding: 6px 0;
+  text-indent: 10px;
+  width: 100%;
+}
+fieldset {
+  border: none;
+  margin-top: 18px;
+}
+label {
+  display: inline-block;
+  text-align: right;
+  padding: 0 10px;
+  width: 100px;
+}
+label:first-letter {
+  text-transform: uppercase;
+}
+input[type=text],
+input[type=email],
+input[type=tlf],
+input[type=url],
+textarea {
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+  font-size: 1em;
+  outline: none;
+  padding: 0.3em;
+  transition: box-shadow 0.2s ease-in-out;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tlf]:focus,
+input[type=url]:focus,
+textarea:focus {
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.3), 0 0 5px #0ff;
+}
+body {
+  background: #f5f5f5;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
