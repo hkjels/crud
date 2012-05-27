@@ -13,13 +13,13 @@ var mongoose = require('mongoose')
  * the JSON-object to something fairly human-friendly.
  */
 
-var User = new Schema({
+var Users = new Schema({
     'name': {
         'first': {type: String, required: true}
       , 'last': String
     }
   , 'email': {
-        'home': {type: String, match: /[\w]+@[\w]+\.[\w]{2,3}/}
+        'home': {type: String, match: /[\w]+@[\w]+\.[\w]{2,3}/, required: true}
       , 'work': {type: String, match: /[\w]+@[\w]+\.[\w]{2,3}/}
     }
   , 'phone': {type: String, match: /[\d]{8}/, override: 'tlf'}
@@ -31,5 +31,5 @@ var User = new Schema({
  * Expose User to mongoose
  */
 
-mongoose.model('User', User)
+mongoose.model('Users', Users)
 

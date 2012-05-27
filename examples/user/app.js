@@ -5,12 +5,13 @@
 
 var express = require('express')
   , app = module.exports = express.createServer()
-  , routes = require('./routes')
+  , Resource = require('express-resource')
   , models = require('./models')
   , stylus = require('stylus')
   , nib = require('nib')
   , crud = require('../../crud')
 
+require('express-namespace')
 
 /**
  * Compile stylus with nib
@@ -43,17 +44,27 @@ app.configure(function(){
  */
 
 app.helpers({
-    environment: process.env.NODE_ENV
+    environment: process.env.NODE_ENV || 'development'
   , title: 'Crud example'
   , values: null
+})
+
+/**
+ * API
+ *
+ * CRUD supports express-namespace & express-resource
+ * This creates a one to one connection between your routes and models
+ */
+
+app.namespace('/api', function () {
+  app.resource('users', crud.resource)
 })
 
 /**
  * Routes
  */
 
-app.get('/', routes.explain)
-app.get('/:model', crud.middleware, routes.form)
+app.get('/', function (req, res) { res.render('explain') })
 
 /**
  * Start listening

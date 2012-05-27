@@ -15,5 +15,5 @@ mongoose.connect('mongodb://localhost/crud')
  * UserModel
  */
 
-require('./User')
+require('./Users')
 

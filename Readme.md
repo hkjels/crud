@@ -3,6 +3,12 @@
 __Crud-functionality for mongoose-models. Fits well with express.js__
 
 
+## PS
+
+This module is under heavy development @ the moment is not ready for production!!
+Have a look in a day or two
+
+
 ## Install
 
     λ npm install crud
@@ -30,6 +36,12 @@ __Crud-functionality for mongoose-models. Fits well with express.js__
       if (err) return console.err(err)
       console.dir(form)
     })
+
+
+## Note
+
+To utilize CRUD, you'll have to follow the naming-conventions of mongoose to
+the point. Modelnames should be in plural and they should be capitalized.
 
 
 ## Constributors

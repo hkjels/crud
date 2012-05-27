@@ -6,8 +6,6 @@
 global-reset()
 reset-html5()
 
-ident = rgb(220, 240, 250)
-
 /**
  * Form
  */
@@ -19,13 +17,25 @@ body
   background: #81878a
   color: #222
   font: 14px 'Open sans', Helvetica, Arial
+  line-height: 1.5em
   padding: 50px
   text-align: center
+  text-shadow: 0 1px 0 rgba(white, 0.2)
 
 #wrapper
   margin: 0 auto
   max-width: 540px
   text-align: left
+
+h1
+  font-size: 3em
+  line-height: 2em
+
+p
+  background: white
+  box-shadow: 0 1px 3px rgba(black, 0.3)
+  font-size: 1.3em
+  padding: 30px
 
 for pos in block inline inline-block
   .{pos}

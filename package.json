@@ -2,6 +2,10 @@
     "name": "crud"
   , "version": "0.0.2"
   , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
+  , "homepage": "http://hkjels.github.com/crud/"
+  , "bugs": {
+      "url": "https://github.com/hkjels/crud/issues"
+  }
   , "contributors": [
       { "name": "Henrik Kjelsberg", "email": "henrik@kjelsberg.net" }
   ]
@@ -10,16 +14,19 @@
   , "repository": "git://github.com/hkjels/crud.git"
   , "scripts": {
       "prepublish": "make mocha with cream and sugar"
-    , "start": "node examples/user/app"
+    , "start": "node-dev examples/user/app"
     , "test": "make mocha"
   }
   , "dependencies": {
       "cycle": "1.0.0"
+    , "lingo": "0.0.4"
     , "mongoose": ">= 2.0.0"
   }
   , "devDependencies": {
       "dox": "0.3.1"
     , "express": "2.5.9"
+    , "express-namespace": "0.1.0"
+    , "express-resource": "0.2.4"
     , "jade": "0.26.0"
     , "jshint": ">= 0.7.0"
     , "marked": "0.2.5"

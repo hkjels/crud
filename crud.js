@@ -9,8 +9,10 @@
  * Module dependencies
  */
 
-var mongoose = require('mongoose')
-  , cycle = require('cycle')
+var cycle = require('cycle')
+  , lingo = require('lingo')
+  , en = lingo.en
+  , mongoose = require('mongoose')
 
 /**
  * Form
@@ -107,6 +109,81 @@ var form = exports.form = function (model, cb) {
 }
 
 /**
+ * Resource for use with express-resources
+ */
+
+exports.resource = {
+    index: function (req, res) {}
+
+  , new: function (req, res, next) {
+      var instance = 'user'
+        , model = lingo.capitalize(en.pluralize(instance))
+
+      console.log(req.route)
+
+      form(model, function (err, form) {
+        if (err) return next(err)
+        res.locals({
+            form: form
+          , instance: instance
+          , model: model
+        })
+        res.render('form')
+      })
+    }
+
+  /**
+   * Create
+   */
+
+  , create: function (req, res) {}
+
+  /**
+   * ≈Read
+   */
+
+  , show: function (req, res) {}
+
+  /**
+   * Edit
+   *
+   * Normalizes mongoose-model. The normalized data is found in the local named
+   * "form" and can easily be converted into a bunch of form-elements with some
+   * clever templating.
+   * @see /examples
+   */
+
+  , edit: function (req, res, next) {
+      var instance = Object.keys(req.route.params)[0]
+        , model = lingo.capitalize(en.pluralize(instance))
+
+      form(model, function (err, form) {
+        if (err) return next(err)
+        res.locals({
+            form: form
+          , instance: instance
+          , model: model
+        })
+        res.render('form')
+      })
+    }
+
+  /**
+   * Update
+   */
+
+  , update: function (req, res) {}
+
+  /**
+   * Delete
+   */
+
+  , destroy: function (req, res) {}
+
+
+}
+
+/**
  * Crud express-middleware
  *
  * A middleware route for express that populates res.form with the fields from
@@ -114,10 +191,15 @@ var form = exports.form = function (model, cb) {
  */
 
 exports.middleware = function (req, res, next) {
-  var model = req.params.model
+  var instance = req.params.model.toLowerCase()
+    , model = lingo.capitalize(en.pluralize(instance))
   form(model, function (err, form) {
     if (err) return next(err)
-    res.locals({form: form, model: model})
+    res.locals({
+        form: form
+      , instance: instance
+      , model: model
+    })
     return next()
   })
 }
