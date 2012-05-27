@@ -16,12 +16,16 @@ ident = rgb(220, 240, 250)
 
 
 body
-  background: ident linear-gradient(top, lighten(ident, 40%), ident)
-  background-attachment: fixed
-  color: lighten(black, 25%)
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif
+  background: #81878a
+  color: #222
+  font: 14px 'Open sans', Helvetica, Arial
   padding: 50px
   text-align: center
+
+#wrapper
+  margin: 0 auto
+  max-width: 540px
+  text-align: left
 
 for pos in block inline inline-block
   .{pos}
