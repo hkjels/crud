@@ -3,7 +3,7 @@
 
 # Procedures
 
-docs: docs/crud.json
+docs: docs/index.html
 
 lint:
 	./node_modules/.bin/jshint crud.js
@@ -14,7 +14,7 @@ test:
 clean: cleandocs
 
 cleandocs:
-	rm -rf docs
+	rm -rf docs/*.html
 
 
 # Aliases
@@ -34,6 +34,8 @@ with:
 
 # Compile
 
-docs/crud.json: crud.js
-	mkdir -p docs
-	./node_modules/.bin/dox < $< > $@
+docs/index.html: docs/layout/head.html docs/Readme.html docs/layout/tail.html
+	cat $^ > $@
+
+docs/%.html: docs/%.md
+	./node_modules/.bin/marked $< > $@
