@@ -32,7 +32,7 @@ app.configure(function(){
   app.set('view engine', 'jade')
   app.use(express.bodyParser())
   app.use(express.methodOverride())
-  app.use(require('stylus').middleware({ src: __dirname + '/public' }))
+  app.use(stylus.middleware({ src: __dirname + '/public', compile: compile }))
   app.use(app.router)
   app.use(express['static'](__dirname + '/public'))
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
@@ -43,7 +43,8 @@ app.configure(function(){
  */
 
 app.helpers({
-    title: 'Crud user-example'
+    environment: process.env.NODE_ENV
+  , title: 'Crud example'
   , values: null
 })
 
@@ -58,6 +59,7 @@ app.get('/:model', crud.middleware, routes.form)
  * Start listening
  */
 
-app.listen(3000, function(){
+app.listen(8080, function(){
   console.log('Crud example is listening on port %d', app.address().port)
 })
+

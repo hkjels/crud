@@ -92,7 +92,8 @@ var form = exports.form = function (model, cb) {
     form[field]['type'] = typeof Schema[field]['options']['override'] !== 'undefined'
                         ? Schema[field]['options']['override']
                         : fieldtype
-    form[field]['type'] = field[0] === '_' ? 'hidden' : fieldtype
+    form[field]['type'] = form[field]['type'].toString()
+    form[field]['type'] = field[0] === '_' ? 'hidden' : form[field]['type']
     if (typeof Schema[field]['options']['min'] !== 'undefined'
         && Schema[field]['options']['min'] >= 50) {
       form[field]['type'] = 'textarea'
@@ -100,8 +101,6 @@ var form = exports.form = function (model, cb) {
     if (typeof Schema[field]['options']['max'] !== 'undefined') {
       form[field]['max'] = Schema[field]['options']['max']
     }
-
-    console.dir(Schema[field])
   }
 
   return cb(err, form)

@@ -7,11 +7,10 @@
   ]
   , "description": "Crud functionality for mongoose-models. Fits well with express.js"
   , "keywords": ["mongoose", "express", "crud", "scaffold"]
-  , "main": "crud.js"
   , "repository": "git://github.com/hkjels/crud.git"
   , "scripts": {
-      "test": "make mocha"
-    , "prepublish": "make mocha lint"
+      "prepublish": "make mocha with cream and sugar"
+    , "test": "make mocha"
   }
   , "dependencies": {
       "cycle": "1.0.0"

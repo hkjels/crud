@@ -1,15 +1,27 @@
+
+/**
+ * Reset browser-defaults
+ */
+
 global-reset()
 reset-html5()
 
+ident = rgb(220, 240, 250)
+
+/**
+ * Form
+ */
+
 @import 'form'
 
-body
-  background: whitesmoke
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
 
+body
+  background: ident linear-gradient(top, lighten(ident, 40%), ident)
+  background-attachment: fixed
+  color: lighten(black, 25%)
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif
+  padding: 50px
+  text-align: center
 
 for pos in block inline inline-block
   .{pos}

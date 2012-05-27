@@ -3,9 +3,9 @@
   form(action='/api/'+model+'/', method='post')
     if (values)
       input(type='hidden', method='put')
-      legend Update
+      legend Update !{model.toLowerCase()}
     else
-      legend New
+      legend New !{model.toLowerCase()}
 
       //-
         Loop through every field in the Schema and create the appropriate
@@ -14,7 +14,7 @@
 
       fieldset
         each field in form
-          .inline-block
+          .block
             if field.type !== 'hidden'
               label= field.name
             if field.type === 'textarea'
@@ -22,10 +22,9 @@
             else
               input(type=field.type, name=field.name, required=field.required, maxlength=field.max)
 
-
-
 //- In development-mode, output the Schema to the console
-if (process.env.NODE_ENV !== 'production')
+
+if (environment == 'development')
   script(type='text/javascript')
     console.dir(!{JSON.stringify(form)})
 

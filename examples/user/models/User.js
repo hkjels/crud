@@ -10,7 +10,7 @@ var mongoose = require('mongoose')
  * UserModel
  *
  * Will be passed to Crud for dissection. Crud will then normalize and simplify
- * the JSON-object to something fairly humanfriendly
+ * the JSON-object to something fairly human-friendly.
  */
 
 var User = new Schema({
