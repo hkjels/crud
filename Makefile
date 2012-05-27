@@ -6,10 +6,10 @@
 docs: docs/index.html
 
 lint:
-	./node_modules/.bin/jshint crud.js
+	@./node_modules/.bin/jshint crud.js
 
 test:
-	./node_modules/.bin/mocha test/*.test.js
+	@./node_modules/.bin/mocha test/*.test.js
 
 clean: cleandocs
 
@@ -35,7 +35,7 @@ with:
 # Compile
 
 docs/index.html: docs/layout/head.html docs/Readme.html docs/layout/tail.html
-	cat $^ > $@
+	@cat $^ > $@
 
-docs/%.html: docs/%.md
-	./node_modules/.bin/marked $< > $@
+docs/%.html: %.md
+	@./node_modules/.bin/marked $< > $@

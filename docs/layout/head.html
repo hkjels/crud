@@ -1,16 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 	<title>Crud</title>
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <style type="text/css">
     body {
-      background-color: #eaeaea;
-      color: #333;
-      font-family: Helvetica, Arial;
+      background: #81878a;
+      color: #222;
+      font-family: 'Open sans', Helvetica, Arial;
+      margin: 0;
       padding: 50px;
+      position: relative;
       text-align: center;
-      text-shadow: 0 1px 0 white;
+      text-shadow: 0 1px 0 #aaa;
+    }
+    a {
+      color: ghostWhite;
+      margin-left: 5px;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #666;
+      -moz-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+    a:hover {
+      color: white;
+      text-shadow: 0 0 6px ghostWhite;
     }
     #wrapper {
       margin: 0 auto;
@@ -18,20 +35,31 @@
       text-align: left;
     }
     h1 {
-      font-size: 4em;
+      font-size: 8em;
       line-height: 0;
+      letter-spacing: -0.05em;
     }
     p strong, pre {
       display: block;
       margin-bottom: 50px;
     }
+    pre, blockquote {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      text-shadow: none;
+    }
+    pre, code, blockquote {
+      background: white !important;
+    }
+    blockquote {
+      margin: 0;
+      padding: 30px 50px;
+    }
   </style>
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/github.min.css">
   <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad()
-  </script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad()</script>
 </head>
 <body>
+  <a href="https://github.com/hkjels/crud/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
   <div id="wrapper">
 

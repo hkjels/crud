@@ -1,4 +1,5 @@
 .todo
+docs/*.html
 
 lib-cov
 *.seed

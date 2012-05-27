@@ -1,6 +1,6 @@
 # crud
 
-__Crud functionality for mongoose-models. Fits well with express.js__
+__Crud-functionality for mongoose-models. Fits well with express.js__
 
 
 ## Install
