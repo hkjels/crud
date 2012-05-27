@@ -1,1 +1,132 @@
-My Page
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<title>Crud</title>
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    body {
+      background: #81878a;
+      color: #222;
+      font-family: 'Open sans', Helvetica, Arial;
+      margin: 0;
+      padding: 50px;
+      position: relative;
+      text-align: center;
+      text-shadow: 0 1px 0 #aaa;
+    }
+    a {
+      color: ghostWhite;
+      margin-left: 5px;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #666;
+      -moz-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+    a:hover {
+      color: white;
+      text-shadow: 0 0 6px ghostWhite;
+    }
+    #wrapper {
+      margin: 0 auto;
+      max-width: 540px;
+      text-align: left;
+    }
+    h1 {
+      font-size: 8em;
+      line-height: 0;
+      letter-spacing: -0.05em;
+    }
+    p strong, pre {
+      display: block;
+      margin-bottom: 50px;
+    }
+    pre, blockquote {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      text-shadow: none;
+    }
+    pre, code, blockquote {
+      background: white !important;
+    }
+    blockquote {
+      margin: 0;
+      padding: 30px 50px;
+    }
+  </style>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad()
+  </script>
+</head>
+<body>
+  <a href="https://github.com/hkjels/crud/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  <div id="wrapper">
+
+<h1>crud</h1>
+<p><strong>Crud-functionality for mongoose-models. Fits well with express.js</strong>
+
+
+</p>
+<h2>Install</h2>
+<pre><code>λ npm install crud</code></pre>
+<h2>With express.js magic</h2>
+<pre><code>var express = require(&#39;express&#39;)
+  , app = module.exports = express.createServer()
+  , models = require(&#39;./models&#39;)
+  , crud = require(&#39;crud&#39;)
+
+app.get(&#39;/crud/:model&#39;, crud.middleware, function (req, res) {
+  res.render(&#39;crud&#39;)
+})</code></pre>
+<h2>Without express.js magic</h2>
+<pre><code>var mongoose = require(&#39;mongoose&#39;)
+  , Model = mongoose.model(&#39;Model&#39;)
+  , crud = require(&#39;crud&#39;).form
+
+crud(Model, function (err, form) {
+  if (err) return console.err(err)
+  console.dir(form)
+})</code></pre>
+<h2>Constributors</h2>
+<ul>
+<li>Henrik Kjelsberg <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x68;&#107;&#x6a;&#101;&#x6c;&#x73;&#64;&#x6d;&#101;&#x2e;&#x63;&#111;&#109;">&#x68;&#107;&#x6a;&#101;&#x6c;&#x73;&#64;&#x6d;&#101;&#x2e;&#x63;&#111;&#109;</a> 
+<a href="http://github.com/hkjels/" title="Github account">github</a>
+<a href="http://take.no/" title="Development blog">website</a></li>
+</ul>
+<h2>License</h2>
+<blockquote>
+<p>(The MIT License)
+
+</p>
+<p>Copyright (c) 2012 Henrik Kjelsberg &lt;henrik@kjelsberg.net&gt;
+
+</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&#39;Software&#39;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+</p>
+<p>THE SOFTWARE IS PROVIDED &#39;AS IS&#39;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+</blockquote>
+
+  </div>
+</body>
+</html>
