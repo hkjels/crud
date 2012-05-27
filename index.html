@@ -39,7 +39,7 @@
       line-height: 0;
       letter-spacing: -0.05em;
     }
-    p strong, pre {
+    p, pre {
       display: block;
       margin-bottom: 50px;
     }
@@ -57,9 +57,7 @@
     }
   </style>
   <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad()
-  </script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad()</script>
 </head>
 <body>
   <a href="https://github.com/hkjels/crud/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
@@ -67,6 +65,12 @@
 
 <h1>crud</h1>
 <p><strong>Crud-functionality for mongoose-models. Fits well with express.js</strong>
+
+
+</p>
+<h2>PS</h2>
+<p>This module is under heavy development @ the moment is not ready for production!!
+Have a look in a day or two
 
 
 </p>
@@ -90,9 +94,15 @@ crud(Model, function (err, form) {
   if (err) return console.err(err)
   console.dir(form)
 })</code></pre>
+<h2>Note</h2>
+<p>To utilize CRUD, you&#39;ll have to follow the naming-conventions of mongoose to
+the point. Modelnames should be in plural and they should be capitalized.
+
+
+</p>
 <h2>Constributors</h2>
 <ul>
-<li>Henrik Kjelsberg <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x68;&#107;&#x6a;&#101;&#x6c;&#x73;&#64;&#x6d;&#101;&#x2e;&#x63;&#111;&#109;">&#x68;&#107;&#x6a;&#101;&#x6c;&#x73;&#64;&#x6d;&#101;&#x2e;&#x63;&#111;&#109;</a> 
+<li>Henrik Kjelsberg <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#104;&#107;&#x6a;&#x65;&#x6c;&#115;&#64;&#x6d;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#107;&#x6a;&#x65;&#x6c;&#115;&#64;&#x6d;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a> 
 <a href="http://github.com/hkjels/" title="Github account">github</a>
 <a href="http://take.no/" title="Development blog">website</a></li>
 </ul>
