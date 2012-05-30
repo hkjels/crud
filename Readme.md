@@ -1,12 +1,6 @@
 # crud
 
-__Crud-functionality for mongoose-models. Fits well with express.js__
-
-
-## PS
-
-This module is under heavy development @ the moment is not ready for production!!
-Have a look in a day or two
+__Crud-functionality for mongoose and express__
 
 
 ## Install
@@ -14,34 +8,29 @@ Have a look in a day or two
     λ npm install crud
 
 
-## With express.js magic
+## Usage
 
     var express = require('express')
-      , app = module.exports = express.createServer()
+      , app = express.createServer()
       , models = require('./models')
-      , crud = require('crud')
 
-    app.get('/crud/:model', crud.middleware, function (req, res) {
-      res.render('crud')
-    })
+    require('crud')
 
+    app.crud('modelname')
 
-## Without express.js magic
+## REST-api
 
-    var mongoose = require('mongoose')
-      , Model = mongoose.model('Model')
-      , crud = require('crud').form
+The action-mapping is inherited from
+[express-resource](https://github.com/visionmedia/express-resource)
+and is as follows
 
-    crud(Model, function (err, form) {
-      if (err) return console.err(err)
-      console.dir(form)
-    })
-
-
-## Note
-
-To utilize CRUD, you'll have to follow the naming-conventions of mongoose to
-the point. Modelnames should be in plural and they should be capitalized.
+    GET     /forums              ->  index
+    GET     /forums/new          ->  new
+    POST    /forums              ->  create
+    GET     /forums/:forum       ->  show
+    GET     /forums/:forum/edit  ->  edit
+    PUT     /forums/:forum       ->  update
+    DELETE  /forums/:forum       ->  destroy
 
 
 ## Constributors

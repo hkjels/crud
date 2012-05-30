@@ -1,4 +1,42 @@
 
-h1 Welcome
-p You should open '/User'
+h1 REST structure
+
+table
+  thead
+    tr
+      th Method
+      th Adress
+      th Response
+  tbody
+    tr
+      td(scope='row') GET
+      td /api/users
+      td index
+    tr
+      td(scope='row') GET
+      td /api/users/new
+      td new
+    tr
+      td(scope='row') POST
+      td /api/users
+      td create
+    tr
+      td(scope='row') GET
+      td /api/users/:id
+      td show
+    tr
+      td(scope='row') GET
+      td /api/users/:id/edit
+      td edit
+    tr
+      td(scope='row') PUT
+      td /api/users/:id
+      td update
+    tr
+      td(scope='row') DELETE
+      td /api/users/:id
+      td destroy
+  tfoot
+    tr
+      td(colspan='3') '/api/users/new' would be a good place to start
 

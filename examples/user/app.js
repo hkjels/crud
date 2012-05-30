@@ -5,11 +5,10 @@
 
 var express = require('express')
   , app = module.exports = express.createServer()
-  , Resource = require('express-resource')
   , models = require('./models')
   , stylus = require('stylus')
   , nib = require('nib')
-  , crud = require('../../crud')
+  , crud = require('../../lib/crud')(app)
 
 require('express-namespace')
 
@@ -52,12 +51,12 @@ app.helpers({
 /**
  * API
  *
- * CRUD supports express-namespace & express-resource
- * This creates a one to one connection between your routes and models
+ * CRUD supports express-namespace
+ * This means you can add authentication as middleware for all sub-routes
  */
 
 app.namespace('/api', function () {
-  app.resource('users', crud.resource)
+  app.crud('users')
 })
 
 /**

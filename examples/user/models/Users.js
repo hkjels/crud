@@ -20,7 +20,7 @@ var Users = new Schema({
     }
   , 'email': {
         'home': {type: String, match: /[\w]+@[\w]+\.[\w]{2,3}/, required: true}
-      , 'work': {type: String, match: /[\w]+@[\w]+\.[\w]{2,3}/}
+      , 'work': {type: String}
     }
   , 'phone': {type: String, match: /[\d]{8}/, override: 'tlf'}
   , 'born': Date

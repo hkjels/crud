@@ -1,25 +1,28 @@
 
-form(action='/'+model.toLowerCase()+'/', method='post')
-  if (values)
-    input(type='hidden', method='put')
-    legend= 'Update '+instance
+form(action='/api/'+form.model+'/'+(form.id || ''), method='post')
+  if (form.filled)
+    input(type='hidden', name='_method', value='put')
+    legend= 'Update '+form.name
   else
-    legend= 'New '+instance
+    legend= 'New '+form.name
 
-    //-
-      Loop through every field in the Schema and create the appropriate
-      formelements.
-      @see /docs/crud.md
+  //-
+    Loop through every field in the Schema and create the appropriate
+    formelements.
+    @see /docs/crud.md
 
-    fieldset
-      each field in form
-        .inline-block
-          if field.type !== 'hidden'
-            label(for='[name='+field.name+']', class=field.required ? 'required' : '')= field.name
-          if field.type === 'textarea'
-            textarea(name=field.name, required=field.required, maxlength=field.max)
-          else
-            input(type=field.type, name=field.name, required=field.required, maxlength=field.max)
+  fieldset
+    each field in form.fields
+      .inline-block
+        if field.type !== 'hidden'
+          label(for='[name='+field.shortName+']', class=field.required ? 'required' : '')= field.shortName
+        if field.type === 'textarea'
+          textarea(name=field.name, required=field.required, maxlength=field.max)= field.value || null
+        else
+          input(type=field.type, name=field.name, required=field.required, maxlength=field.max, value=field.value)
+
+  fieldset
+    input(type='submit', value=form.filled ? 'update' : 'add')
 
 //- In development-mode, output the Schema to the console
 
