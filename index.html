@@ -39,7 +39,7 @@
       line-height: 0;
       letter-spacing: -0.05em;
     }
-    p, pre {
+    strong, pre {
       display: block;
       margin-bottom: 50px;
     }
@@ -52,6 +52,7 @@
       background: white !important;
     }
     blockquote {
+      font-size: 0.8em;
       margin: 0;
       padding: 30px 50px;
     }
@@ -64,45 +65,36 @@
   <div id="wrapper">
 
 <h1>crud</h1>
-<p><strong>Crud-functionality for mongoose-models. Fits well with express.js</strong>
-
-
-</p>
-<h2>PS</h2>
-<p>This module is under heavy development @ the moment is not ready for production!!
-Have a look in a day or two
+<p><strong>Crud-functionality for mongoose and express</strong>
 
 
 </p>
 <h2>Install</h2>
 <pre><code>λ npm install crud</code></pre>
-<h2>With express.js magic</h2>
+<h2>Usage</h2>
 <pre><code>var express = require(&#39;express&#39;)
-  , app = module.exports = express.createServer()
+  , app = express.createServer()
   , models = require(&#39;./models&#39;)
-  , crud = require(&#39;crud&#39;)
 
-app.get(&#39;/crud/:model&#39;, crud.middleware, function (req, res) {
-  res.render(&#39;crud&#39;)
-})</code></pre>
-<h2>Without express.js magic</h2>
-<pre><code>var mongoose = require(&#39;mongoose&#39;)
-  , Model = mongoose.model(&#39;Model&#39;)
-  , crud = require(&#39;crud&#39;).form
+require(&#39;crud&#39;)
 
-crud(Model, function (err, form) {
-  if (err) return console.err(err)
-  console.dir(form)
-})</code></pre>
-<h2>Note</h2>
-<p>To utilize CRUD, you&#39;ll have to follow the naming-conventions of mongoose to
-the point. Modelnames should be in plural and they should be capitalized.
-
+app.crud(&#39;modelname&#39;)</code></pre>
+<h2>REST-api</h2>
+<p>The action-mapping is inherited from
+<a href="https://github.com/visionmedia/express-resource">express-resource</a>
+and is as follows
 
 </p>
+<pre><code>GET     /forums              -&gt;  index
+GET     /forums/new          -&gt;  new
+POST    /forums              -&gt;  create
+GET     /forums/:forum       -&gt;  show
+GET     /forums/:forum/edit  -&gt;  edit
+PUT     /forums/:forum       -&gt;  update
+DELETE  /forums/:forum       -&gt;  destroy</code></pre>
 <h2>Constributors</h2>
 <ul>
-<li>Henrik Kjelsberg <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#104;&#107;&#x6a;&#x65;&#x6c;&#115;&#64;&#x6d;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#107;&#x6a;&#x65;&#x6c;&#115;&#64;&#x6d;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a> 
+<li>Henrik Kjelsberg <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#104;&#x6b;&#x6a;&#x65;&#108;&#x73;&#64;&#x6d;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#104;&#x6b;&#x6a;&#x65;&#108;&#x73;&#64;&#x6d;&#101;&#x2e;&#99;&#x6f;&#x6d;</a> 
 <a href="http://github.com/hkjels/" title="Github account">github</a>
 <a href="http://take.no/" title="Development blog">website</a></li>
 </ul>
