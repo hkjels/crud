@@ -1,20 +1,20 @@
 {
     "name": "crud"
-  , "version": "0.0.26"
-  , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
+  , "description": "Crud functionality for mongoose-models. Fits well with express.js"
+  , "keywords": ["mongoose", "express", "crud", "scaffold", "rest"]
   , "homepage": "http://hkjels.github.com/crud/"
-  , "bugs": {
-      "url": "https://github.com/hkjels/crud/issues"
-  }
+  , "version": "0.0.27"
+  , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
   , "contributors": [
       { "name": "Henrik Kjelsberg", "email": "henrik@kjelsberg.net" }
   ]
-  , "description": "Crud functionality for mongoose-models. Fits well with express.js"
-  , "keywords": ["mongoose", "express", "crud", "scaffold"]
+  , "main": "index.js"
+  , "bugs": {
+      "url": "https://github.com/hkjels/crud/issues"
+  }
   , "repository": "git://github.com/hkjels/crud.git"
   , "scripts": {
       "prepublish": "make mocha with cream and sugar"
-    , "start": "node-dev examples/user/app"
     , "test": "make mocha"
   }
   , "dependencies": {

@@ -8,7 +8,7 @@ var express = require('express')
   , models = require('./models')
   , stylus = require('stylus')
   , nib = require('nib')
-  , crud = require('../../lib/crud')(app)
+  , crud = require('../../lib/crud')
 
 require('express-namespace')
 
