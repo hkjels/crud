@@ -19,18 +19,18 @@
   }
   , "dependencies": {
       "cycle": "1.0.0"
-    , "express": "2.5.9"
-    , "express-resource": "0.2.4"
-    , "lingo": "0.0.4"
-    , "mongoose": ">= 2.0.0"
   }
   , "devDependencies": {
       "dox": "0.3.1"
+    , "express": "2.5.x"
     , "express-namespace": "0.1.0"
+    , "express-resource": "0.2.x"
     , "jade": "0.26.0"
     , "jshint": ">= 0.7.0"
+    , "lingo": ">=0.0.4"
     , "marked": "0.2.5"
     , "mocha": "1.0.3"
+    , "mongoose": ">= 2.0.0"
     , "nib": "0.4.1"
     , "should": "0.6.3"
     , "stylus": "0.27.0"
