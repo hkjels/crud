@@ -1,6 +1,6 @@
 {
     "name": "crud"
-  , "version": "0.0.2"
+  , "version": "0.0.25"
   , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
   , "homepage": "http://hkjels.github.com/crud/"
   , "bugs": {
