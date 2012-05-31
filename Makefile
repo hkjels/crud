@@ -6,7 +6,7 @@
 docs: docs/index.html
 
 lint:
-	@./node_modules/.bin/jshint crud.js
+	@./node_modules/.bin/jshint ./lib
 
 test:
 	@./node_modules/.bin/mocha test/*.test.js
