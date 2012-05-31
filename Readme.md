@@ -33,6 +33,17 @@ and is as follows
     DELETE  /forums/:forum       ->  destroy
 
 
+## Roadmap
+
+Crud is not nearly at a finite-state, but will be under heavy development and
+testing in the near future. There's no official roadmap per se, but you can
+assume that these features will be implemented shortly:
+
+* Automatic and manual messages (using express-messages)
+* More validation on the client-side
+* Setting/retrieving values via sockets
+
+
 ## Constributors
 
 *	Henrik Kjelsberg <hkjels@me.com> 

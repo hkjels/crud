@@ -2,11 +2,11 @@
 # Taskpool
 
 
-* TODO Improve the #style of the generated form  
+* TODO @henrik Create a #test for all mongoose-types and validation  
+* TODO @henrik Add messages through express-messages  
+* TODO @henrik Add match-patterns to the form-elements on the client-side  
+* TODO @henrik Update automagically with #sockets  
 
-* TODO Create a #test for all mongoose-types and validation  
 
-* TODO Create #doc and a github-page to kickstart opensorcerers  
-
-* TODO #Investigate if the module should be made independent of #mongoose & #express
+Best viewed using [ntask](http://hkjels.github.com/ntask/)
 
