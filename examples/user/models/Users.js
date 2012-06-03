@@ -14,7 +14,8 @@ var mongoose = require('mongoose')
  */
 
 var Users = new Schema({
-    'name': {
+    'added': {type: Date, 'default': Date.now, ignore: true}
+  , 'name': {
         'first': {type: String, required: true}
       , 'last': String
     }

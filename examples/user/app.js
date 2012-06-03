@@ -69,7 +69,7 @@ app.get('/', function (req, res) { res.render('explain') })
  * Start listening
  */
 
-app.listen(8080, function(){
+app.listen(3000, function(){
   console.log('Crud example is listening on port %d', app.address().port)
 })
 
