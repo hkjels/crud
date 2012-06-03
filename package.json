@@ -3,7 +3,7 @@
   , "description": "Crud functionality for mongoose-models. Fits well with express.js"
   , "keywords": ["mongoose", "express", "crud", "scaffold", "rest"]
   , "homepage": "http://hkjels.github.com/crud/"
-  , "version": "0.0.27"
+  , "version": "0.0.28"
   , "author": "Henrik Kjelsberg <henrik@kjelsberg.net>"
   , "contributors": [
       { "name": "Henrik Kjelsberg", "email": "henrik@kjelsberg.net" }
