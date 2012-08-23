@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/hkjels/crud.png)](http://travis-ci.org/hkjels/crud)
 # crud
 
 __Crud-functionality for mongoose and express__
