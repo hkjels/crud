@@ -1,5 +1,7 @@
 # crud
 
+[![Project Status](http://stillmaintained.com/hkjels/crud.png)](http://stillmaintained.com/hkjels/crud)
+
 __Crud-functionality for mongoose and express__
 
 
