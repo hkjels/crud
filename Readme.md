@@ -1,6 +1,6 @@
 # crud
 
-[![Project Status](http://stillmaintained.com/hkjels/crud.png)](http://stillmaintained.com/hkjels/crud)
+This project is no longer maintained. 
 
 __Crud-functionality for mongoose and express__
 
@@ -35,29 +35,17 @@ and is as follows
     DELETE  /forums/:forum       ->  destroy
 
 
-## Roadmap
-
-Crud is not nearly at a finite-state, but will be under heavy development and
-testing in the near future. There's no official roadmap per se, but you can
-assume that these features will be implemented shortly:
-
-* Automatic and manual messages (using express-messages)
-* More validation on the client-side
-* Setting/retrieving values via sockets
-
-
-## Constributors
+## Contributors
 
 *	Henrik Kjelsberg <hkjels@me.com> 
 [github](http://github.com/hkjels/ "Github account")
-[website](http://take.no/ "Development blog")
 
 
 ## License
 
 > (The MIT License)
 >
-> Copyright (c) 2012 Henrik Kjelsberg &lt;henrik@kjelsberg.net&gt;
+> Copyright (c) 2012 Henrik Kjerringvåg &lt;hkjels@me.com&gt;
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
